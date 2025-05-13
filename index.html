@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <meta charset="utf-8">
+    </head>
+<body>
+    <div class="kvadrat">
+        <div class="sayti">сайты - искусство</div>
+        <div class="pustota"></div>
+        <div class="ili">или простая коммерция?</div>
+    </div>
+</body>
+<div class="kvadrat2">
+    <div class="litso">сайт - лицо</div>
+    <div class="kompanii">компании или продукта</div>
+</div>
+<div class="kvadrat3">
+    <div class="no">но вы не думаете, что это что-то</div>
+    <div class="glubzhe">глубже?</div>
+</div>
+<div class="kvadrat4">
+    <div class="malevich"></div>
+    <div class="cherniy">“Черный квадрат” К.С. Малевич</div>
+</div>
+<div class="kvadrat5">
+    <div class="kakkartina">сайт, как картина,</div>
+    <div class="poetomu">поэтому мы решили совместить эти два искусства вместе</div>
+</div>
+<div class="kvadrat6">
+    <div class="smotret">хотите смотреть на великолепие?</div>
+</div>
+<div class="iskusstvo">Искусство</div>
+<body>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="carousel-item" style="background-image: url('img/janna.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('img/goya.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('img/mona2.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('img/devushka.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('img/krik.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('img/bort.jpg')"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.carousel-track');
+            const items = document.querySelectorAll('.carousel-item');
+            const itemWidth = 300;
+            const gap = 20;
+            let position = 0;
+            const speed = 0.15;
+            
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                track.appendChild(clone);
+            });
+            
+            function animate() {
+                position -= speed;
+                
+                if (position < -itemWidth * items.length) {
+                    position = 0;
+                }
+                
+                track.style.transform = `translateX(${position}px)`;
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+        });
+    </script>
+</body>
+<div class="oblast">
+    <div class="hotite">Хотите ещё?</div>
+    <div class="togda">тогда приглашаем вас на онлайн выставку цифрового искусства Г. Г. Эльнуровича</div>
+    <a href="kartini.html" class="nashi">наши проекты</a>
+</div>
+<div class="niz">
+    <div class="zona">
+        <div class="kontakti">Контакты</div>
+        <div class="nomer">8 (977) 111 55 18</div>
+    </div>
+    <div class="zona2">
+        <div class="otzivi">Отзывы</div>
+            <a href="otzivi.html" class="pereyti">Перейти</a>
+    </div>
+</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</html>
